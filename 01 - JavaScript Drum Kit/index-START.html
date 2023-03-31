@@ -62,6 +62,7 @@
   window.addEventListener("keydown", function(e){
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
     if(!audio){return;}
+    audio.currentTime = 0; //rewinds, allowing for faster playing sounds (if you play a key before the audio has ended)
     audio.play();
 
   });
